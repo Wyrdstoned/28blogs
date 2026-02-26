@@ -135,6 +135,23 @@ main {
     margin-bottom: 1rem;
 }
 
+.content.centered {
+    text-align: center;
+}
+
+.content.centered p {
+    margin-bottom: 1.5rem;
+}
+
+.content.centered a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.content.centered a:hover {
+    text-decoration: underline;
+}
+
 .content p {
     margin-bottom: 1rem;
 }
