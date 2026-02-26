@@ -33,18 +33,22 @@
     <script>
     (async function() {
         const params = new URLSearchParams(window.location.search);
-        const slug = params.get('post');
+        let slug = params.get('post');
         
         if (!slug) {
             document.getElementById('post-content').innerHTML = '<p>Post not found.</p>';
             return;
         }
         
+        if (!slug.endsWith('.md')) {
+            slug = slug + '.md';
+        }
+        
         try {
             const repo = 'Wyrdstoned/28blogs';
             const branch = 'main';
             
-            const response = await fetch(`https://api.github.com/repos/${repo}/contents/blog/${slug}.md?ref=${branch}`);
+            const response = await fetch(`https://api.github.com/repos/${repo}/contents/blog/${slug}?ref=${branch}`);
             const file = await response.json();
             const content = atob(file.content);
             

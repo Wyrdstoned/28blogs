@@ -21,12 +21,17 @@ async function loadBlogPosts() {
                     const titleMatch = content.match(/title:\s*(.+)/);
                     const dateMatch = content.match(/date:\s*(.+)/);
                     const descMatch = content.match(/description:\s*(.+)/);
+                    let description = '';
+                    if (descMatch) {
+                        description = descMatch[1].trim().replace(/^["']|["']$/g, '');
+                        if (!description || description === '\\n') description = '';
+                    }
                     
                     return {
                         title: titleMatch ? titleMatch[1].trim() : file.name.replace('.md', ''),
                         date: dateMatch ? new Date(dateMatch[1]).toLocaleDateString() : '',
-                        description: descMatch ? descMatch[1].trim() : '',
-                        slug: file.name.replace('.md', '')
+                        description: description,
+                        slug: file.name
                     };
                 })
         );
