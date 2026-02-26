@@ -40,7 +40,7 @@ async function loadBlogPosts() {
         
     container.innerHTML = posts.map(post => `
         <article class="blog-post">
-            <h2><a href="post.html?post=${post.slug}.md">${post.title}</a></h2>
+            <h2><a href="post.html?post=${post.slug}">${post.title}</a></h2>
             <div class="meta">${post.date}</div>
             <p>${post.description}</p>
         </article>
