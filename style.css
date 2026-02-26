@@ -1,9 +1,9 @@
 :root {
-    --primary: #2563eb;
-    --bg: #f8fafc;
-    --text: #1e293b;
-    --card-bg: #ffffff;
-    --border: #e2e8f0;
+    --primary: #60a5fa;
+    --bg: #0a0a0a;
+    --text: #a3a3a3;
+    --card-bg: #171717;
+    --border: #404040;
 }
 
 * {
@@ -26,6 +26,10 @@ header {
     background: var(--card-bg);
     border-bottom: 1px solid var(--border);
     padding: 1rem 2rem;
+}
+
+.logo {
+    color: #e5e5e5;
 }
 
 nav {
@@ -150,6 +154,10 @@ main {
 
 .content.centered a:hover {
     text-decoration: underline;
+}
+
+.content.centered h1 {
+    color: #e5e5e5;
 }
 
 .content p {
