@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - 28Blogs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">28Blogs</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="legendary.html">Legendary Blogs</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <a href="blog.html" style="color: var(--primary);">&larr; Back to Blog</a>
+            <div id="post-content">Loading...</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 28Blogs</p>
+    </footer>
+
+    <script>
+    (async function() {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('post');
+        
+        if (!slug) {
+            document.getElementById('post-content').innerHTML = '<p>Post not found.</p>';
+            return;
+        }
+        
+        try {
+            const repo = 'Wyrdstoned/28blogs';
+            const branch = 'main';
+            
+            const response = await fetch(`https://api.github.com/repos/${repo}/contents/blog/${slug}.md?ref=${branch}`);
+            const file = await response.json();
+            const content = atob(file.content);
+            
+            const titleMatch = content.match(/title:\s*(.+)/);
+            const dateMatch = content.match(/date:\s*(.+)/);
+            const title = titleMatch ? titleMatch[1].trim() : slug;
+            const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString() : '';
+            
+            const body = content.split('---')[2] || content;
+            const html = body
+                .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+                .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>');
+            
+            document.title = title + ' - 28Blogs';
+            document.getElementById('post-content').innerHTML = `
+                <h1>${title}</h1>
+                <p class="meta">${date}</p>
+                <div style="margin-top: 1.5rem;">${html}</div>
+            `;
+        } catch (e) {
+            document.getElementById('post-content').innerHTML = '<p>Error loading post.</p>';
+        }
+    })();
+    </script>
+</body>
+</html>
