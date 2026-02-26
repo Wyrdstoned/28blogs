@@ -45,12 +45,8 @@
         }
         
         try {
-            const repo = 'Wyrdstoned/28blogs';
-            const branch = 'main';
-            
-            const response = await fetch(`https://api.github.com/repos/${repo}/contents/blog/${slug}?ref=${branch}`);
-            const file = await response.json();
-            const content = atob(file.content);
+            const rawUrl = `https://raw.githubusercontent.com/Wyrdstoned/28blogs/main/blog/${slug}`;
+            const content = await fetch(rawUrl).then(r => r.text());
             
             const titleMatch = content.match(/title:\s*(.+)/);
             const dateMatch = content.match(/date:\s*(.+)/);
