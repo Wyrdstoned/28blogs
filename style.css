@@ -170,6 +170,34 @@ main {
     text-decoration: underline;
 }
 
+.blog-post {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post h2 {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post h2 a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.blog-post h2 a:hover {
+    color: var(--primary);
+}
+
+.blog-post .meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
 footer {
     text-align: center;
     padding: 1.5rem;
