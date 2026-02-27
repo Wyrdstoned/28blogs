@@ -100,7 +100,9 @@ main {
 }
 
 .feed-item:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .feed-item h2 {
@@ -109,7 +111,7 @@ main {
 }
 
 .feed-item h2 a {
-    color: var(--text);
+    color: #e5e5e5;
     text-decoration: none;
 }
 
@@ -125,7 +127,48 @@ main {
 
 .feed-item .description {
     font-size: 0.95rem;
-    color: #475569;
+    color: #a3a3a3;
+}
+
+.loading {
+    text-align: center;
+    color: #e5e5e5;
+    padding: 2rem;
+    font-size: 1.2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.feed-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.load-more-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    background: #22c55e;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.load-more-btn:hover {
+    background: #16a34a;
+    transform: scale(1.02);
 }
 
 .content {
