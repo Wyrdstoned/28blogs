@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: The feed is live, and a call for art!
+title: The feed is live and a call for art!
 date: 2026-02-28T17:57:00.000-05:00
 description: It begins
 ---
