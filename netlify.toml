@@ -1,4 +1,15 @@
+[build]
+  functions = "netlify/functions"
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
+
+[build.environment]
+  NETLIFY_NPM_FLAGS = "--prefer-offline"
+
+[[scheduled_functions]]
+  name = "rss-cache"
+  function = "rss"
+  schedule = "*/15 * * * *"
