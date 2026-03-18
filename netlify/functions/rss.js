@@ -44,6 +44,8 @@ const feeds = [
     'https://underthedice.com/feed/',
     'https://knifesquid.wordpress.com/feed/',
     'https://nochudsnomasters.com/users/nvts8a.atom',
+    'https://hewnidol.blogspot.com/feeds/posts/default?alt=rss',
+    'https://underthedice.com/feed/',
 ];
 
 async function fetchAllFeeds() {
