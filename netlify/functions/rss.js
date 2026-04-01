@@ -46,6 +46,7 @@ const feeds = [
     'https://nochudsnomasters.com/users/nvts8a.atom',
     'https://hewnidol.blogspot.com/feeds/posts/default?alt=rss',
     'https://underthedice.com/feed/',
+    'https://entertheweald.co.uk/feed/',
 ];
 
 async function fetchAllFeeds() {
