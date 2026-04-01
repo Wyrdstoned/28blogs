@@ -41,6 +41,7 @@ const feeds = [
     'https://gravesector.blogspot.com/feeds/posts/default',
     'https://thevvizardstower.blogspot.com/feeds/posts/default?alt=rss',
     'https://gardensofhecate.com/blog/rss',
+    'https://goblinpaladin.blogspot.com/feeds/posts/default?alt=rss',
     'https://underthedice.com/feed/',
     'https://knifesquid.wordpress.com/feed/',
     'https://nochudsnomasters.com/users/nvts8a.atom',
