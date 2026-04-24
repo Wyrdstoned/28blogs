@@ -48,6 +48,8 @@ const feeds = [
     'https://hewnidol.blogspot.com/feeds/posts/default?alt=rss',
     'https://underthedice.com/feed/',
     'https://entertheweald.co.uk/feed/',
+    'https://dustchapel.com/rss.xml',
+    'https://exquisitebrutality.blogspot.com/feeds/posts/default?alt=rss',
 ];
 
 async function fetchAllFeeds() {
