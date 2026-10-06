@@ -50,6 +50,7 @@ const feeds = [
     'https://entertheweald.co.uk/feed/',
     'https://dustchapel.com/rss.xml',
     'https://exquisitebrutality.blogspot.com/feeds/posts/default?alt=rss',
+    'https://m1cr0c0sm.blogspot.com/feeds/posts/default?alt=rss',
 ];
 
 async function fetchAllFeeds() {
